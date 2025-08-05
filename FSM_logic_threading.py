@@ -23,7 +23,7 @@ class FormulationFSM:
 
     def __init__(self):
         # CONSTANTS
-        MODEL_PATH = "C:/Users/rafia/Documents/internship/best.pt"
+        MODEL_PATH = "" #ADD MODEL PATH
         MAX_ITERATIONS = 5
 
         self.machine = Machine(model=self, states=FormulationFSM.states, initial='initialise') # Creates FSM
@@ -196,7 +196,7 @@ class FormulationFSM:
 
     def start_experiment_action(self):
         """
-        Sends the chosen paramters to the IKA hotplate to start heating/stirring
+        Sends the chosen parameters to the IKA hotplate to start heating/stirring
         """
         print("Starting experiment: ")
 
@@ -446,8 +446,9 @@ if __name__ == "__main__":
     fsm = FormulationFSM()
 
     # Runs live 
-    fsm.start_camera_thread('C:/Users/rafia/Documents/internship/test_output.avi')
+    fsm.start_camera_thread('OUPUT PATH') #ADD OUTPUT PATH HERE
 
     fsm.initialised() # triggers first state
     while fsm.state != 'terminate':
         time.sleep(0.1)
+
